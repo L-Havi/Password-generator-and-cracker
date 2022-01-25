@@ -49,7 +49,7 @@ public class GUI implements ActionListener{
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
-		frame.setTitle("GUI");
+		frame.setTitle("Password generator");
 		frame.pack();
 		frame.setVisible(true);
 		
