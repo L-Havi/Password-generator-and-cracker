@@ -37,6 +37,7 @@ public class GUI implements ActionListener{
 	JTextField passwordLength;
 	
 	public GUI() {
+		//Creating the graphic user interface
 		frame = new JFrame();
 		panel = new JPanel();
 		
@@ -98,13 +99,16 @@ public class GUI implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		Object o = e.getSource();
 		
+		//Create password
 		if(o == createPasswordButton) {
 			
+			//Getting input
 			int length = Integer.parseInt(passwordLength.getText());
 			boolean uppercase = uppercaseLetters.isSelected();
 			boolean number = numbers.isSelected();
 			boolean special = specialCharacters.isSelected();
 			
+			//Converting checkboxes to char
 			if (uppercase == false) {
 				passwordUppercase = 'n';
 			} else {
@@ -124,11 +128,13 @@ public class GUI implements ActionListener{
 			new PasswordGenerator(length, passwordUppercase ,passwordNumbers, passwordSpecial);
 			
 			
-			
+		//Brute force
 		} else if(o == bruteForceButton) {
+			//Getting password from text
 			String rawPasswordText = createdPassword.getText();
 			String passWord = rawPasswordText.substring(14);
 			
+			//Choosing the correct charset
 			if(passwordUppercase == 'n' && passwordNumbers == 'n' && passwordSpecial == 'n') {
 				charset = "abcdefghijklmnopqrstuvwxyz".toCharArray();
 			}else if(passwordUppercase == 'n' && passwordNumbers == 'n' && passwordSpecial == 'y') {
