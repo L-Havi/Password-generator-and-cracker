@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class PasswordCracker {
 
-	
+	//Brute forcing password by checking attempt to password starting from AAA... --> AAB... --> AAC etc.
 	  public static void BruteForce(String password, char[]charset) {
 		  
 		  PasswordCracker bf = new PasswordCracker(charset, 1);
